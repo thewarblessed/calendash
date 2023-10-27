@@ -23,6 +23,8 @@ Route::get('/', function () {
     return redirect('/dashboard');
 })->middleware('auth');
 
+//SIDEBAR SIDEBAR SIDEBAR SIDEBAR
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('auth');
@@ -32,7 +34,7 @@ Route::get('/tables', function () {
 })->name('tables')->middleware('auth');
 
 Route::get('/events', function () {
-    return view('event.tables');
+    return view('event.events');
 })->name('events')->middleware('auth');
 
 Route::get('/myevents', function () {
@@ -105,3 +107,9 @@ Route::post('/reset-password', [ResetPasswordController::class, 'store'])
 Route::get('/laravel-examples/user-profile', [ProfileController::class, 'index'])->name('users.profile')->middleware('auth');
 Route::put('/laravel-examples/user-profile/update', [ProfileController::class, 'update'])->name('users.update')->middleware('auth');
 Route::get('/laravel-examples/users-management', [UserController::class, 'index'])->name('users-management')->middleware('auth');
+
+// CREATE EVENT
+Route::get('/createEvent', function () {
+    return view('event.create');
+})->name('createEvent')->middleware('auth');
+

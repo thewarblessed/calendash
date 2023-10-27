@@ -55,34 +55,104 @@
                                 <div class="card-body">
                                     <form role="form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                                         @csrf
-                                        <label>First Name</label>
-                                        <div class="mb-3">
-                                            <input type="text" id="fname" name="fname" class="form-control"
-                                                placeholder="Enter your first name" value="{{old("fname")}}" aria-label="Name"
-                                                aria-describedby="name-addon">
-                                            @error('name')
-                                                <span class="text-danger text-sm">{{ $message }}</span>
-                                            @enderror
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>First Name</label>
+                                                <div class="mb-3">
+                                                    <input type="text" id="fname" name="fname" class="form-control"
+                                                        placeholder="Enter your first name" value="{{old("fname")}}" aria-label="Name"
+                                                        aria-describedby="name-addon">
+                                                    @error('name')
+                                                        <span class="text-danger text-sm">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Last Name</label>
+                                                <div class="mb-3">
+                                                    <input type="text" id="lname" name="lname" class="form-control"
+                                                        placeholder="Enter your last name" value="{{old("lname")}}" aria-label="Name"
+                                                        aria-describedby="name-addon">
+                                                    @error('name')
+                                                        <span class="text-danger text-sm">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                            </div>
                                         </div>
-                                        <label>Last Name</label>
                                         <div class="mb-3">
-                                            <input type="text" id="lname" name="lname" class="form-control"
-                                                placeholder="Enter your last name" value="{{old("lname")}}" aria-label="Name"
-                                                aria-describedby="name-addon">
-                                            @error('name')
-                                                <span class="text-danger text-sm">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlSelect1">Example select</label>
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                              <option>1</option>
-                                              <option>2</option>
-                                              <option>3</option>
-                                              <option>4</option>
-                                              <option>5</option>
+                                            <label for="exampleFormControlSelect1">Please select type of user</label>
+                                            <select class="form-control" id="roleSelect">
+                                              <option>Student</option>
+                                              <option>Professor</option>
+                                              <option>Admin/Staff</option>
                                             </select>
+                                        </div>
+
+                                        <div class="form-group" id="tupIDdiv">
+                                          <label>TUP ID</label>
+                                            <div class="input-group">
+                                              <span class="input-group-text text-body">
+                                                TUPT-
+                                              </span>
+                                              <input type="text" class="form-control" placeholder="XX-XXXX">
+                                              @error('tupId')
+                                                  <span class="text-danger text-sm">{{ $message }}</span>
+                                              @enderror
+                                            </div>
                                           </div>
+
+                                        <div class="row" id="rowAndCourse">
+                                            <div class="col-md-6" id="courseform">
+                                                <label>Course</label>
+                                                <div class="mb-3">
+                                                    <input type="course" id="course" name="course" class="form-control"
+                                                        placeholder="Enter your course" value="{{old("course")}}" aria-label="course"
+                                                        aria-describedby="course-addon">
+                                                    @error('course')
+                                                        <span class="text-danger text-sm">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6" id="yearform">
+                                                <label>Year Level</label>
+                                                <div class="mb-3">
+                                                    <input type="yearLevel" id="yearLevel" name="yearLevel" class="form-control"
+                                                        placeholder="Year Level" value="{{old("yearLevel")}}" aria-label="yearLevel"
+                                                        aria-describedby="yearLevel-addon">
+                                                    @error('yearLevel')
+                                                        <span class="text-danger text-sm">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row" id="divOrg">
+                                            <div class="col-md-6">
+                                                <label>Department</label>
+                                                    <div class="mb-3">
+                                                        <input type="dept" id="dept" name="dept" class="form-control"
+                                                            placeholder="Enter your department" value="{{old("dept")}}" aria-label="dept"
+                                                            aria-describedby="dept-addon">
+                                                        @error('dept')
+                                                            <span class="text-danger text-sm">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                            </div>
+
+                                            <div class="col-md-6" >
+                                                <label>Organization</label>
+                                                    <div class="mb-3">
+                                                        <input type="organization" id="organization" name="organization" class="form-control"
+                                                            placeholder="Enter your organization" value="{{old("organization")}}" aria-label="organization"
+                                                            aria-describedby="organization-addon">
+                                                        @error('organization')
+                                                            <span class="text-danger text-sm">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                            </div>
+                                        </div>
+
                                         <label>Email Address</label>
                                         <div class="mb-3">
                                             <input type="email" id="email" name="email" class="form-control"
@@ -92,6 +162,7 @@
                                                 <span class="text-danger text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
+
                                         <label>Password</label>
                                         <div class="mb-3">
                                             <input type="password" id="password" name="password" class="form-control"
@@ -101,6 +172,15 @@
                                                 <span class="text-danger text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
+
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlSelect1">Please select role</label>
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                              <option>Member</option>
+                                              <option>Executive</option>                    
+                                            </select>
+                                        </div>
+
                                         {{-- <div class="form-check form-check-info text-left mb-0">
                                             <input class="form-check-input" type="checkbox" name="terms"
                                                 id="terms" required>
@@ -138,5 +218,7 @@
             </div>
         </section>
     </main>
+    {{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> --}}
+    <script type="text/javascript" src="/js/myscript.js"></script>
 
 </x-guest-layout>

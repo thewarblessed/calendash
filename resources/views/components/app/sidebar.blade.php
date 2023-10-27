@@ -151,7 +151,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">My Events</span>
+                    <span class="nav-link-text ms-1">My Status Events</span>
                 </a>
             </li>
             <!-- VENUES -->

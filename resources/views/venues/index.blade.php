@@ -9,20 +9,11 @@
                         <div class="full-background"
                             style="background-image: url('../assets/img/header-blue-purple.jpg')"></div>
                         <div class="card-body text-start p-4 w-100">
-                            <h3 class="text-white mb-2">Create your event!🎉🤩✨🔥</h3>
+                            <h3 class="text-white mb-2">Available Venues!🎉🤩✨🔥</h3>
                             <p class="mb-4 font-weight-semibold">
-                                Check all the advantages and choose the best.
+                                Check all the venues and choose what fits for your event.
                             </p>
 
-                            <!-- Button trigger modal -->
-                            <button type="button"
-                                class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <span class="btn-inner--icon">
-                                    <i class="fa-solid fa-plus"></i>
-                                </span>
-                                &nbsp;&nbsp;
-                                <span class="btn-inner--text">Create Event</span>
-                            </button>
                             <img src="../assets/img/3d-cube.png" alt="3d-cube"
                                 class="position-absolute top-0 end-1 w-25 max-width-200 mt-n6 d-sm-block d-none" />
                         </div>

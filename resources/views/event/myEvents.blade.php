@@ -21,7 +21,7 @@
                                     <i class="fa-solid fa-plus"></i>
                                 </span>
                                 &nbsp;&nbsp;
-                                <span class="btn-inner--text">Create Event</span>
+                                <span href="#" class="btn-inner--text">Create Event</span>
                             </button>
                             <img src="../assets/img/3d-cube.png" alt="3d-cube"
                                 class="position-absolute top-0 end-1 w-25 max-width-200 mt-n6 d-sm-block d-none" />
